@@ -15,12 +15,15 @@ To get the demo working, run the containers in the following order
 
 ```
 
-### 3. [Java[Send message to RabbitMQ `/3second-python`
+### 3. [C#] Send message to RabbitMQ `/3send-csharp`
 ```
     docker build -t mono ./ && docker run --link rabbit mono
 ```
 
 ### 4. Receive message in Node from RabbitMQ and write to Mysql
+```
+    docker build -t node ./ && docker run --link rabbit node
+```
 
 ### 5. Read from Mysql and render message on page
 

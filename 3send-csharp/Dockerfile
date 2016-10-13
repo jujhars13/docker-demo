@@ -4,6 +4,7 @@ ADD app app/
 
 WORKDIR /app
 
+#build the binary
 RUN mcs /r:/app/RabbitMQ.Client.dll /app/Send.cs
 
 ENTRYPOINT ["mono", "Send.exe"]
