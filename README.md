@@ -3,6 +3,9 @@
 
 Host a Rabbit MQ server, C# server and NodeJS clients
 
+1. Send a msg to a RabbitMQ queue
+2. Read the msg via Node on CLI or Web
+
 ## Containers
 To get the demo working, run the containers in the following order
 
@@ -13,17 +16,18 @@ To get the demo working, run the containers in the following order
 ```
 
 ### 2. [C#] Send message to RabbitMQ `/send-csharp`
-```
-    docker build -t mono ./ && docker run --link rabbit mono "our message"
+```bash
+    docker build -t csharp ./ && docker run --link rabbit csharp "our message"
 ```
 
-### 3. Receive message in Node from RabbitMQ on CLI
-```
+### 3. [Node.js] Receive message from RabbitMQ on CLI `/receive-node-cli`
+```bash
     docker build -t node ./ && docker run --link rabbit node
 ```
 
-### 4. Receive message in Node from RabbitMQ in WEB
-```
+### 4. [Node.js] Receive message from RabbitMQ in WEB `/receive-node-web`
+Receive the message and send it via SocketIO to the web front end
+```bash
     docker build -t nodeweb ./ && docker run --link rabbit -t -p 8080:8080 nodeweb
 ```
 
