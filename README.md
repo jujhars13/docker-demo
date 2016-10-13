@@ -12,6 +12,8 @@ To get the demo working, run the containers in the following order
 
 ### 1. RabbitMQ
 ```bash
+    docker run --hostname rabbit --name rabbit rabbitmq:3
+    #or
     docker run --hostname rabbit --name rabbit -p 9080:15672 rabbitmq:3-management
 ```
 
