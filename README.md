@@ -1,7 +1,8 @@
 # JL Tech Conf 2016, Docker Demo Jujhar Singh
 
 
-Host a Rabbit MQ server, C# server and NodeJS client
+Host a Rabbit MQ server, C# server and NodeJS clients
+
 ## Containers
 To get the demo working, run the containers in the following order
 
@@ -11,15 +12,18 @@ To get the demo working, run the containers in the following order
     docker run --hostname rabbit --name rabbit -p 9080:15672 rabbitmq:3-management
 ```
 
-
-### 3. [C#] Send message to RabbitMQ `/3send-csharp`
+### 2. [C#] Send message to RabbitMQ `/send-csharp`
 ```
-    docker build -t mono ./ && docker run --link rabbit mono
+    docker build -t mono ./ && docker run --link rabbit mono "our message"
 ```
 
-### 4. Receive message in Node from RabbitMQ and write to Mysql
+### 3. Receive message in Node from RabbitMQ on CLI
 ```
     docker build -t node ./ && docker run --link rabbit node
 ```
 
+### 4. Receive message in Node from RabbitMQ in WEB
+```
+    docker build -t nodeweb ./ && docker run --link rabbit -t -p 8080:8080 nodeweb
+```
 
