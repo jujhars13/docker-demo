@@ -85,3 +85,10 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
