@@ -15,9 +15,9 @@ To get the demo working, run the containers in the following order
 
 ```
 
-### 3. Send message from Python to RabbitMQ `/3second-python`
+### 3. [Java[Send message to RabbitMQ `/3second-python`
 ```
-    docker build -t python ./ && docker run python
+    docker build -t mono ./ && docker run --link myrabbit mono
 ```
 
 ### 4. Receive message in Node from RabbitMQ and write to Mysql
