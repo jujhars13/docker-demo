@@ -1,7 +1,8 @@
-# JL Tech Conf 2016, Docker Demo Jujhar Singh
+# JL Tech Conf 2016, Docker Demo 
 
+This code is used to demonstrate Docker on your machine.
 
-Host a Rabbit MQ server, C# server and NodeJS clients
+We will host a RabbitMQ server, C# container to push messages and two NodeJS to consume the messages
 
 1. Send a msg to a RabbitMQ queue
 2. Read the msg via Node on CLI or Web
@@ -22,7 +23,7 @@ To get the demo working, run the containers in the following order
     docker build -t csharp ./ && docker run --link rabbit csharp "our message"
 ```
 
-### 3. [Node.js] Receive message from RabbitMQ on CLI `/receive-node-cli`
+### 3. [Node.js] optional Receive message from RabbitMQ on CLI `/receive-node-cli`
 ```bash
     docker build -t node ./ && docker run --link rabbit node
 ```
