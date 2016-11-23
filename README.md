@@ -33,3 +33,15 @@ Receive the message and send it via SocketIO to the web front end
     docker build -t nodeweb ${PWD} && docker run --link rabbit -t -p 8080:8080 nodeweb
 ```
 
+### 5. Run cAdvisor to see what's going on
+```bash
+    sudo docker run \
+      --volume=/:/rootfs:ro \
+      --volume=/var/run:/var/run:rw \
+      --volume=/sys:/sys:ro \
+      --volume=/var/lib/docker/:/var/lib/docker:ro \
+      --publish=8080:8080 \
+      --detach=true \
+      --name=cadvisor \
+      google/cadvisor:latest
+```
