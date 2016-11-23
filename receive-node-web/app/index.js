@@ -12,10 +12,16 @@ http.listen(process.env.NODE_PORT, function(){
     console.log('listening on *:', process.env.NODE_PORT);
 });
 
+/**
+ * connect to rabbit MQ
+ */
 io.on('connection', function(socket){
     console.log('socketio client connected');
 });
 
+/**
+ * Once connected listen to rabbit channel and spew out message
+ */
 amqp.connect('amqp://rabbit', function (err, conn) {
     if (err){
         console.log('err',err);

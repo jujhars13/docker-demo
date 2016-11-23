@@ -8,8 +8,8 @@ amqp.connect('amqp://rabbit', function (err, conn) {
         console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queueName);
         ch.consume(queueName, function (msg) {
 
-            //save msg to mysql
-            console.log(" [x] Received %s", msg.content.toString());
+            //console.log
+            console.log(" [x] Received: %s", msg.content.toString());
 
 
         }, {noAck: true});
